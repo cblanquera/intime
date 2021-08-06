@@ -1,0 +1,36 @@
+{
+  "name": "time",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "compile": "hardhat compile",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "test": "hardhat test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "dotenv": "^10.0.0",
+    "formidable": "^1.2.2",
+    "ipfs-only-hash": "^4.0.0",
+    "moment": "^2.29.1",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "web3": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.3.1",
+    "hardhat": "^2.4.1",
+    "hardhat-gas-reporter": "^1.0.4",
+    "eth-gas-reporter": "git+https://github.com/lucaperret/eth-gas-reporter#6ac872b599adcaa8aab40808576e769c6872eb38"
+  }
+}
