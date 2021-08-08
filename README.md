@@ -3,8 +3,8 @@
 Proofs are designed to prevent the congestion of block entries in the
 blockchain by simply making it slower to confirm blocks. First to find the
 golden nonce wins! The lowest nonce that makes a block hash from the last
-block that ends with `0000` is the golden nonce. This favors the best computer
-specs that process nonce numbers faster.
+block that ends with `0000` or 4 zeros is the golden nonce. This favors
+the best computer specs that process nonce numbers faster.
 
 Inspired by the movie [In Time](https://www.youtube.com/watch?v=6zB6wZKEObc),
 `MIN` is a currency that automatically burns by the minute. You can earn `MIN`
@@ -50,12 +50,12 @@ difficulty is relative to how much `MIN` a mining wallet has in that, the more a
 mining wallet has, the longer it will take to mine a block. An example
 difficulty table can be thought as the following outline.
 
- - 1-9 years = 2 zeros
- - 10-99 years = 3 zeros
- - 100-499 years = 4 zeros
- - 500-999 years = 5 zeros
- - 1000-1499 years = 6 zeros
- - 1500-1999 years = 7 zeros
+ - If miner owns 1-9 years -> 2 zeros of difficulty
+ - If miner owns 10-99 years -> 3 zeros of difficulty
+ - If miner owns 100-499 years -> 4 zeros of difficulty
+ - If miner owns 500-999 years -> 5 zeros of difficulty
+ - If miner owns 1000-1499 years -> 6 zeros of difficulty
+ - If miner owns 1500-1999 years -> 7 zeros of difficulty
 
 > Note: Still need to vary the amounts
 
