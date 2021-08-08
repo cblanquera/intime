@@ -1,4 +1,4 @@
-# SPEC: Proof of InTime
+# SPEC: In Time Blockchain
 
 Proofs are designed to prevent the congestion of block entries in the
 blockchain by simply making it slower to confirm blocks. First to find the
@@ -19,6 +19,7 @@ Inspired by the movie [In Time](https://www.youtube.com/watch?v=6zB6wZKEObc),
  - **Cooling Period** - The time between a wallet being generated and ready
  for mining.
  - **Burned** - Tokens are purposely and permanently removed from circulation.
+ - **Burning Token Protocol** - Tokens that are automatically burned over time.
 
 ## Set Up
 
@@ -28,7 +29,7 @@ During this period, the software will download the blockchain and can verify
 newly entered blocks. The cooling period is necessary to determine the
 stability of the mining hardware.
 
-> If the mining software goes offline for any reason, the cooling period
+> NOTE: If the mining software goes offline for any reason, the cooling period
 restarts
 
 ## Mining Wallet
@@ -40,8 +41,8 @@ for every block that is successfully mined, 10 years, calculated by
 `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first finds the golden
 nonce.
 
-> The Ethereum Network processes > ~6k blocks a day. In MIN, that's good for
-219K years per year or 2.19k lifetimes
+> NOTE: The Ethereum Network processes > ~6k blocks a day. In MIN, that's good
+for 219K years per year or 2.19k lifetimes
 
 ### Proof of Being Poor
 
@@ -58,7 +59,7 @@ difficulty table can be thought as the following outline.
  - If miner owns 1000-1499 years -> 6 zeros of difficulty
  - If miner owns 1500-1999 years -> 7 zeros of difficulty
 
-> Note: Still need to vary the amounts
+> NOTE: Still need to vary the amounts
 
 ### Energy
 
@@ -76,11 +77,29 @@ wallet. A consumer wallet can never change into a mining wallet. The mining
 software will need to generate a new wallet and wait for the cooling period in
 order to start mining again.
 
+### Tokens and Smart Contracts
+
+Since there is no gas fees, smart contracts can be freely deployed and executed
+and tokens can be freely minted. Smart contracts can optionally add rewards to
+miners in code using their own token. Tokens can be stable or adopt the
+burning token protocol.
+
+> NOTE: This spec does not describe what language the smart contracts would be
+written in.
+
+### Pay to Prioritize
+
+While verifying transactions are free for consumers, it is a first received
+first processed basis. Consumers can pay miners to prioritize their
+transactions next. Prioritized transactions are grouped in a different
+queue from normal transactions and is checked before the normal queue.
+
 ## Considerations
 
-A time burning token is not ideal in scenarios that are built on stability and
-shifts the paradigm from value by having more to value by keeping what you
-already have. The following were considered when writing this specification.
+The burning token protocol is not ideal in scenarios that are built on
+stability and shifts the paradigm from value by having more to value by keeping
+what you already have. The following were considered when writing this
+specification.
 
  - Time is meant to be lost and can only be stable by serving the network.
  - Miners can also serve the environment by saving energy at their discretion.
@@ -141,27 +160,11 @@ to unlink and transfer funds
 
 # SPEC: ERC777 In Time Token
 
-An ERC777 compliant token that automatically burns by the minute. Inspired by
-the movie [In Time](https://www.youtube.com/watch?v=6zB6wZKEObc). The token
-has the following concepts.
-
-## Token Relative to Time Now
-
-A wallet **MIN** balance is relative to the time now, meaning tokens get burned
-by the minute.
-
- - For example if you just got minted tokens held them for a year and did
- nothing else, you will have zero **MIN** in the end.
- - For example if you received 25**MIN**, 25 minutes later you will have
- zero **MIN**.
-
-## Trading
-
-Tokens can be freely traded with any ethereum compliant wallet holders.
-Exchanges that trade **MIN** would need to comply with the subtraction of
-tokens per minute or the contract will error when transferring if the balances
-are not the same.
+An ERC777 compliant In Time implementation of the burning token protocol that
+automatically burns by the minute. Tokens can be freely traded with any ERC20
+compliant wallet holders.
 
 # SPEC: ERC721 Moments
 
-An ERC721 compliant Non-Fungible Token that allows you to own a piece of time.
+An ERC721 compliant Non-Fungible Token that allows you to literally own a piece
+of time.
