@@ -7,8 +7,8 @@ block that ends with `0000` or 4 zeros is the golden nonce. This favors
 the best computer specs that process nonce numbers faster.
 
 Inspired by the movie [In Time](https://www.youtube.com/watch?v=6zB6wZKEObc),
-`MIN` is a currency that automatically burns by the minute. You can earn `MIN`
-for mining.
+`MIN` is a currency that automatically burns tokens by the minute. You can earn
+`MIN` for mining.
 
 ## Definitions
 
@@ -18,6 +18,7 @@ for mining.
  prevent their `MIN` from being burned.
  - **Cooling Period** - The time between a wallet being generated and ready
  for mining.
+ - **Burned** - Tokens are purposely and permanently removed from circulation.
 
 ## Set Up
 
