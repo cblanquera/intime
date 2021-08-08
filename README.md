@@ -85,9 +85,12 @@ writing this specification.
  - Time is meant to be lost and can only be stable by serving the network.
  - Miners can serve the environment by saving energy at their discretion.
  - Preference to poor miners over rich ones to encourage circulation.
+ - Transactions are faster with less energy by controlling the amount of zeros
+ in the proof.
  - Miners cannot purposely be poor in order to win more blocks.
  - Sending funds to competitors in order win blocks is not practical at scale.
  - Mining wallet rules exist to discourage stability, bad miners and bad actors.
+ - Only miners can hold, consumers consume.
  - Time can be infinitely created but with more will be burned with more
  consumer wallets in existence.
 
