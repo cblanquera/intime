@@ -21,11 +21,11 @@ for mining.
 
 ## Set Up
 
-The mining software will generate a new wallet called a mining wallet. There's
-a cooling period of 1 week before the mining wallet can start mining and
-receive funds. During this period, the software will download the blockchain
-and can verify newly entered blocks. The cooling period is necessary to
-determine the stability of the mining hardware.
+The mining software will generate a new mining wallet. There is a cooling
+period of 1 week before the mining wallet can start mining and receive funds.
+During this period, the software will download the blockchain and can verify
+newly entered blocks. The cooling period is necessary to determine the
+stability of the mining hardware.
 
 > If the mining software goes offline for any reason, the cooling period
 restarts
@@ -34,9 +34,10 @@ restarts
 
 A mining wallet is compensated while online *(1 minute is 1 MIN)*. Since `MIN`
 is also burned every minute, this also acts like a time bank
-*(like in the movie)*. For every block that is successfully mined, 10 years
-calculated by `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first
-finds the golden nonce.
+*(like in the movie)* rewarding people that serve the network with stabiity.
+Additionally, for every block that is successfully mined, 10 years, calculated
+by  `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first finds the
+golden nonce.
 
 > The Ethereum Network processes > ~6k blocks a day. In MIN, that's good for
 219K years per year or 2.19k lifetimes
