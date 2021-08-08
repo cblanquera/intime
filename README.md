@@ -82,7 +82,7 @@ shifts the paradigm from value by having more to value by keeping what you
 already have. The following were considered when writing this specification.
 
  - Time is meant to be lost and can only be stable by serving the network.
- - Miners can serve the environment by saving energy at their discretion.
+ - Miners can also serve the environment by saving energy at their discretion.
  - Preference to poor miners over rich ones to encourage circulation.
  - Transactions are faster with less energy by controlling the amount of zeros
  in the proof.
