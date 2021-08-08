@@ -87,7 +87,7 @@ writing this specification.
  - Preference to poor miners over rich ones to encourage circulation.
  - Transactions are faster with less energy by controlling the amount of zeros
  in the proof.
- - Miners cannot purposely be poor in order to win more blocks.
+ - Miners cannot purposely be poor all the time in order to win more blocks.
  - Sending funds to competitors in order win blocks is not practical at scale.
  - Mining wallet rules exist to discourage stability, bad miners and bad actors.
  - Only miners can hold, consumers consume.
