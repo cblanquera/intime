@@ -51,7 +51,7 @@ difficulty is relative to how much `MIN` a mining wallet has in that, the more a
 mining wallet has, the longer it will take to mine a block. An example
 difficulty table can be thought as the following outline.
 
- - If miner owns 1-9 years -> 2 zeros of difficulty
+ - If miner owns 0-9 years -> 2 zeros of difficulty
  - If miner owns 10-99 years -> 3 zeros of difficulty
  - If miner owns 100-499 years -> 4 zeros of difficulty
  - If miner owns 500-999 years -> 5 zeros of difficulty
