@@ -35,7 +35,7 @@ restarts
 A mining wallet is compensated while online *(1 minute is 1 MIN)*. Since `MIN`
 is also burned every minute, this acts like a time bank *(like in the movie)*
 rewarding people that serve the network with token stability. Additionally,
-for every block that is successfully mined, 10 years, calculated by  
+for every block that is successfully mined, 10 years, calculated by
 `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first finds the golden
 nonce.
 
