@@ -77,10 +77,9 @@ order to start mining again.
 
 ## Considerations
 
-An automatic burning token overtime is not ideal in scenarios that are built on
-stability and shifts the paradigm from having value by having more to having
-value by keeping what you already have. The following were considered when
-writing this specification.
+A time burning token is not ideal in scenarios that are built on stability and
+shifts the paradigm from value by having more to value by keeping what you
+already have. The following were considered when writing this specification.
 
  - Time is meant to be lost and can only be stable by serving the network.
  - Miners can serve the environment by saving energy at their discretion.
@@ -91,7 +90,7 @@ writing this specification.
  - Sending funds to competitors in order win blocks is not practical at scale.
  - Mining wallet rules exist to discourage stability, bad miners and bad actors.
  - Only miners can hold, consumers consume.
- - Time can be infinitely created but with more will be burned with more
+ - Time can be infinitely created but with more will be burned with more active
  consumer wallets in existence.
 
 ## Use Cases
