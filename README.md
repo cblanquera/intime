@@ -34,10 +34,10 @@ restarts
 
 A mining wallet is compensated while online *(1 minute is 1 MIN)*. Since `MIN`
 is also burned every minute, this also acts like a time bank
-*(like in the movie)* rewarding people that serve the network with stabiity.
-Additionally, for every block that is successfully mined, 10 years, calculated
-by  `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first finds the
-golden nonce.
+*(like in the movie)* rewarding people that serve the network with token
+stability. Additionally, for every block that is successfully mined, 10 years,
+calculated by  `~(60 * 24 * 365 * 10) MIN` is awarded to the miner that first
+finds the golden nonce.
 
 > The Ethereum Network processes > ~6k blocks a day. In MIN, that's good for
 219K years per year or 2.19k lifetimes
