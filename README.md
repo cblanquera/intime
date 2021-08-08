@@ -90,7 +90,7 @@ already have. The following were considered when writing this specification.
  - Sending funds to competitors in order win blocks is not practical at scale.
  - Mining wallet rules exist to discourage stability, bad miners and bad actors.
  - Only miners can hold, consumers consume.
- - Time can be infinitely created but with more will be burned with more active
+ - Time can be infinitely created but more will be burned with more active
  consumer wallets in existence.
 
 ## Use Cases
