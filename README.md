@@ -69,7 +69,7 @@ time bank that holds funds and verifies new blocks.
 ### Transferring
 
 A consumer wallet can transfer time to a mining wallet in order to keep it
-safe from being burned however a mining wallet cannot transfer funds to any
+safe from being burned however, a mining wallet cannot transfer funds to any
 kind of wallet while it's mining. When a mining wallet does it's first transfer
 out, it is automatically unlinked from the software and treated as a consumer
 wallet. A consumer wallet can never change into a mining wallet. The mining
