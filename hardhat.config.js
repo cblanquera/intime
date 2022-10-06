@@ -1,14 +1,13 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-truffle4");
-require("hardhat-gas-reporter");
+require('@nomiclabs/hardhat-etherscan');
+require('@nomiclabs/hardhat-waffle');
+require('@nomiclabs/hardhat-truffle5');
+require('hardhat-contract-sizer');
+require('hardhat-gas-reporter');
 require('dotenv').config();
-
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const CMC_KEY = process.env.CMC_KEY;
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async () => {
+task('accounts', 'Prints the list of accounts', async () => {
   const accounts = await ethers.getSigners();
 
   for (const account of accounts) {
@@ -23,21 +22,35 @@ task("accounts", "Prints the list of accounts", async () => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: process.env.BLOCKCHAIN_NETWORK,
   networks: {
     hardhat: {
+      chainId: 1337,
+      mining: {
+        //set this to false if you want localhost to mimick a real blockchain
+        auto: true,
+        interval: 5000
+      }
     },
-    matic: {
-      url: "https://rpc-mumbai.maticvigil.com",
-      accounts: [PRIVATE_KEY]
+    goerli: {
+      url: 'https://goerli.infura.io/v3/2a7154bb1cf244d9a412d1925398058c',
+      chainId: 5,
+      scanner: 'https://goerli.etherscan.io',
+      opensea: 'https://testnets.opensea.io',
+      accounts: [process.env.BLOCKCHAIN_GOERLI_PRIVATE_KEY],
+      contracts: {}
     },
-    ropsten: {
-      url: "https://eth-ropsten.alchemyapi.io/v2/YoNVLItXnYnhbJkzY9PMEAyOYn5dDGpn",
-      accounts: [PRIVATE_KEY]
-    }
+    ethereum: {
+      url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 1,
+      scanner: 'https://etherscan.io',
+      opensea: 'https://opensea.io',
+      accounts: [process.env.BLOCKCHAIN_ETHEREUM_PRIVATE_KEY],
+      contracts: {}
+    },
   },
   solidity: {
-    version: "0.8.4",
+    version: '0.8.9',
     settings: {
       optimizer: {
         enabled: true,
@@ -46,18 +59,26 @@ module.exports = {
     }
   },
   paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts"
+    sources: './contracts',
+    tests: './tests',
+    cache: './cache',
+    artifacts: './artifacts'
   },
   mocha: {
     timeout: 20000
   },
   gasReporter: {
     currency: 'USD',
-    //token: 'MATIC', //comment this out if you want ETH
-    coinmarketcap: CMC_KEY,
-    gasPrice: 200,
+    coinmarketcap: process.env.BLOCKCHAIN_CMC_KEY,
+    gasPrice: 50
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env.BLOCKCHAIN_SCANNER_KEY
+  },
+  contractSizer: {
+    //see: https://www.npmjs.com/package/hardhat-contract-sizer
+    runOnCompile: true
   }
 };

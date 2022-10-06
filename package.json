@@ -1,39 +1,24 @@
 {
-  "name": "time",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "test": "hardhat test",
     "compile": "hardhat compile",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start",
-    "test": "hardhat test"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.1.0",
-    "dotenv": "^10.0.0",
-    "formidable": "^1.2.2",
-    "ipfs-only-hash": "^4.0.0",
-    "moment": "^2.29.1",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "start": "node server/index.js"
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "@nomiclabs/hardhat-truffle4": "^2.0.0",
-    "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "@nomiclabs/hardhat-web3-legacy": "^2.0.0",
-    "@openzeppelin/test-helpers": "^0.5.12",
-    "chai": "^4.3.4",
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1",
-    "eth-gas-reporter": "git+https://github.com/lucaperret/eth-gas-reporter#6ac872b599adcaa8aab40808576e769c6872eb38",
-    "ethereum-waffle": "^3.4.0",
-    "ethers": "^5.3.1",
-    "hardhat": "^2.4.1",
-    "hardhat-gas-reporter": "^1.0.4",
-    "web3": "^0.20.7"
+    "@nomiclabs/hardhat-ethers": "2.1.1", 
+    "@nomiclabs/hardhat-etherscan": "3.1.0",
+    "@nomiclabs/hardhat-truffle5": "2.0.7",
+    "@nomiclabs/hardhat-waffle": "2.0.3",
+    "@openzeppelin/contracts": "4.7.3",
+    "dotenv": "16.0.3",
+    "chai": "4.3.6",
+    "ethereum-waffle": "3.4.4",
+    "ethers": "5.7.1",
+    "express": "4.18.1",
+    "hardhat": "2.11.2",
+    "hardhat-contract-sizer": "2.6.1",
+    "hardhat-gas-reporter": "1.0.9",
+    "@openzeppelin/test-helpers": "0.5.16"
   }
 }
