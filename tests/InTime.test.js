@@ -132,6 +132,6 @@ contract('InTime', _ => {
 
     await token.with(holder5).transfer(holder4.address, 20000)
     expect(await token.balanceOf(holder4.address)).to.equal(116000)
-    
+    expect(await token.balanceOf(holder5.address)).to.equal(76000)
   })
 })
