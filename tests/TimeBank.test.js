@@ -69,4 +69,16 @@ contract('InTime', _ => {
     expect(await token.balanceOf(holder2.address)).to.equal(95000)
     expect(await token.totalSupply()).to.equal(285000)
   })
+
+  it('Should not transfer', async function () {
+    const { token, bank, holder3, holder4 } = this
+
+    //deposit holder3 90 seconds
+    await token.with(holder3).approve(bank.address, 90000)
+    await bank.with(holder3)['deposit(uint256)'](90000)
+
+    await expect(
+      bank.with(holder3).transfer(holder4.address, 90000)
+    ).to.be.revertedWith('InvalidTransfer()')
+  })
 })

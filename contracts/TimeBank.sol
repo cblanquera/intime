@@ -11,14 +11,12 @@ contract TimeBank is ERC20 {
 
   error InvalidCall();
   error InvalidAmount();
-  error NonExistentAccount();
+  error InvalidTransfer();
 
   // ============ Constants ============
 
   //this is the contract address for Token
   IERC20MintableBurnable public immutable TIME;
-
-  // ============ Storage ============
 
   // ============ Depoy ============
 
@@ -90,13 +88,7 @@ contract TimeBank is ERC20 {
     address to,
     uint256
   ) internal virtual override {
-    //revert if transferring and zero balance
-    //you can only transfer to open accounts
-    //when you deposit, your account is opened
-    //when you withdraw all of your time, your account is closed
-    if (from != address(0) 
-      && to != address(0) 
-      && balanceOf(to) == 0
-    ) revert NonExistentAccount();
+    //revert if transferring 
+    if (from != address(0) && to != address(0) ) revert InvalidTransfer();
   }
 }
