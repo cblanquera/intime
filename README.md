@@ -2,12 +2,12 @@
 
 Inspired by the movie [In Time](https://www.youtube.com/watch?v=6zB6wZKEObc),
 `SEC` is a currency that automatically burns tokens by the second. You can earn
-seconds throught the time faucet.
+seconds through the time faucet.
 
 ## Terminology
 
  - **Active Time** - Time that is automatically deflationary by the second
- - **Stable Time** - Time that is store in a Time Bank
+ - **Stable Time** - Time that is stored in a Time Bank
  - **Open Account** - A wallet that has a balance in the Time Bank
  - **Closed Account** - A wallet that no longer has a balance in the Time Bank
  - **Negative Balance** - When a wallet runs out of time there's a negative balance that also increases by the second
