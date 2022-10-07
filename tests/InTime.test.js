@@ -129,9 +129,21 @@ contract('InTime', _ => {
 
   it('Should transfer', async function () {
     const { token, holder4, holder5 } = this
-
     await token.with(holder5).transfer(holder4.address, 20000)
     expect(await token.balanceOf(holder4.address)).to.equal(116000)
     expect(await token.balanceOf(holder5.address)).to.equal(76000)
+  })
+
+  it('Should not burn', async function () {
+    const { token, holder4 } = this
+    await expect(//no balance
+      token.with(holder4).burn(200000)
+    ).to.be.revertedWith('InTime: transfer amount exceeds balance')
+  })
+
+  it('Should burn', async function () {
+    const { token, holder4 } = this
+    await token.with(holder4).burn(20000)
+    expect(await token.balanceOf(holder4.address)).to.equal(94000)
   })
 })

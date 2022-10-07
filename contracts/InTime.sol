@@ -2,14 +2,14 @@
 
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
 // ============ Contract ============
 
-contract InTime is Context, AccessControl, ERC20 {
+contract InTime is Context, AccessControl, ERC20Burnable {
   // ============ Constants ============
   
   //all custom roles
@@ -57,6 +57,22 @@ contract InTime is Context, AccessControl, ERC20 {
   }
 
   /**
+   * @dev Returns the amount of tokens owned by `account`.
+   */
+  function expiredOn(address account) public view returns(uint256) {
+    uint256 balance = super.balanceOf(account);
+    //if they never minted
+    if (balance == 0) {
+      //they also never expired
+      return 0;
+    }
+    uint256 timestamp = timeNow();
+    unchecked {
+      return timestamp > balance ? timestamp - balance: 0;
+    }
+  }
+
+  /**
    * @dev Returns true if the account is expired
    */
   function isExpired(address account) public view returns(bool) {
@@ -88,7 +104,7 @@ contract InTime is Context, AccessControl, ERC20 {
     }
   }
 
-  // ============ Write Methods ============
+  // ============ Admin Methods ============
 
   /**
    * @dev Creates `amount` new tokens for `to`.
@@ -102,7 +118,9 @@ contract InTime is Context, AccessControl, ERC20 {
       //require that they never had a balance (new account)
       //you only get one life...
       require(
-        super.balanceOf(to) == 0, 
+        super.balanceOf(to) == 0
+        //or what they are buying restores that account
+        || milliSeconds > expiredOn(to), 
         "InTime: minting to expired account"
       );
       //if no more active accounts
@@ -131,13 +149,16 @@ contract InTime is Context, AccessControl, ERC20 {
     address to,
     uint256 amount
   ) internal virtual override {
-    //if they are transferring
-    if (from != address(0) && to != address(0)) {
+    //if they are not minting
+    if (from != address(0)) {
       //require they have enough funds
       require(
         balanceOf(from) >= amount, 
         "InTime: transfer amount exceeds balance"
       );
+    }
+    //if they are not burning
+    if (to != address(0)) {
       //require they are not transferring to an expired account
       require(!isExpired(to), "InTime: transfer to expired account");
     }
