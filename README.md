@@ -11,8 +11,13 @@ Tokens can be freely traded with any ERC20 compliant wallet holders.
 
 ### Time Bank
 
-A place to store your time when you are not using it. When time is 
-deposited here it will not burn.
+A stable ERC20 version of In Time where you can store your time when 
+you are not using it. When time is deposited here it will not burn.
+
+ - You can only transfer to open bank accounts
+ - By depositing your time, you actually convert your time to this token.
+ - You cannot withdraw your time to an account that doesnt have active time left.
+ - This is the token that will be used for exchanges
 
 ### Time Faucet
 
