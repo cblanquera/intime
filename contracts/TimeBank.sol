@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-import "./IERC20MintableBurnable.sol";
+import "./ERC20/IERC20Adjustable.sol";
 
 contract TimeBank is ERC20 {
   // ============ Errors ============
@@ -16,11 +16,11 @@ contract TimeBank is ERC20 {
   // ============ Constants ============
 
   //this is the contract address for Token
-  IERC20MintableBurnable public immutable TIME;
+  IERC20Adjustable public immutable TIME;
 
   // ============ Depoy ============
 
-  constructor(IERC20MintableBurnable time) ERC20("Time Bank", "SEC") {
+  constructor(IERC20Adjustable time) ERC20("Time Bank", "SEC") {
     TIME = time;
   }
 

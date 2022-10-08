@@ -38,7 +38,10 @@ module.exports = {
       scanner: 'https://goerli.etherscan.io',
       opensea: 'https://testnets.opensea.io',
       accounts: [process.env.BLOCKCHAIN_GOERLI_PRIVATE_KEY],
-      contracts: {}
+      contracts: {
+        token: '0x87A59a8be11649d5464CB2c70e66E1bC0F1D985f',
+        bank: '0x4f4Cd0f04c914DF9CF66A1Cf806E6104f99B1808'
+      }
     },
     ethereum: {
       url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',

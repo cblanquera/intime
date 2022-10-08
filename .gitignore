@@ -35,8 +35,20 @@ yarn-error.log*
 .vercel
 
 #Hardhat files
-cache
-artifacts
 
+.DS_Store
+
+cache/
+
+artifacts/@openzeppelin
+artifacts/build-info
+artifacts/hardhat
+artifacts/contracts/mock
+
+*.dbg.json
+
+Session.vim
+.editorconfig
+*keypair.json
 archives
 NOTES.md

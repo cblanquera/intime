@@ -3,7 +3,7 @@ const { expect, Artifact, role, signers } = require('./utils')
 const InTime = Artifact.get('InTime')
 const TimeBank = Artifact.get('TimeBank')
 
-contract('InTime', _ => {
+contract('TimeBank', _ => {
   before(async function () {
     await signers(this, [ 
       'admin', 
