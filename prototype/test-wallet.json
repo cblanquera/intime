@@ -1,0 +1,12 @@
+{
+  "id": "d982ba40-74ae-4e7c-90bc-3774b4c9760c",
+  "address": "faa9f91f1067e8e0bec010085b2a7ed1595b2278",
+  "wallet_type": "Mining",
+  "balance": 0,
+  "created_at": "2025-08-20T16:41:40.448625Z",
+  "cooling_period_end": "2025-08-27T16:41:40.448625Z",
+  "is_mining": false,
+  "verified_blocks": [],
+  "negative_balance": 0,
+  "last_burn_time": "2025-08-20T16:41:40.448625Z"
+}
